@@ -1,2 +1,6 @@
 import React from 'react';
-import
+import './post.css';
+
+
+
+export default PostContainer;
