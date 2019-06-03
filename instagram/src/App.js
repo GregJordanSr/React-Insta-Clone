@@ -1,21 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import dummyData from './dummy-data';
+import dummyData from './dummyData';
+import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from './components/PostContainer/PostContainer';
 
-class App extends React.Component  {
-  constructor () {
-    super();
-    this.state ={ 
-      comments: dummyData
+
+
+
+
+class App extends Component {
+  
+    state = {
+      posts : [],
+      inputText: '',
     };
-  }
-
-
+    componentDidMount () {
+      console.log('Component: App Mounted');
+      this.setState({
+        posts: dummyData
+      })
+    }
   render() {
     return (
-      <div>
-        <h1>Insta-Clone</h1>
-      </div>
+     <div className="appContainer">
+     <SearchBar />
+     <PostContainer postData={this.state.posts}/>
+     </div>
     )
   }
 }
