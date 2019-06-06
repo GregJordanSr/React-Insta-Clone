@@ -16,6 +16,7 @@ class App extends React.Component {
   }
   
   render () {
+    console.log('render', this.state.data)
     return (
         <div className="App">
           <SearchBar />
